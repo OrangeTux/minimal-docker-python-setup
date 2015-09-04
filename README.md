@@ -1,5 +1,7 @@
 # Minimal Docker Python setup
-A demo of a minimal Nginx-uWSGI-Flask stack using Docker.
+A demo of a minimal Nginx-uWSGI-Flask stack using Docker. Checkout the size:
+
+![Image showing size of both containers.][docker_images]
 
 ## Quickstart
 Create an image from the tarred filesystem:
@@ -22,3 +24,4 @@ This software is licensed under the [MIT license][license].
 © 2015 Auke Willem Oosterhoff
 
 [license]: LICENSE
+[docker_images]: docker_images.png "Size of images."
