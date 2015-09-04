@@ -2,7 +2,13 @@
 A demo of a minimal Nginx-uWSGI-Flask stack using Docker.
 
 ## Quickstart
-Build the images and run them by using `docker-compose`:
+Create an image from the tarred filesystem:
+	
+```shell
+$ docker import - orangetux/nginx < nginx/rootfs.tar
+```
+
+Now build the other images and run them by using `docker-compose`:
 
 ```shell
 $ docker-compose up

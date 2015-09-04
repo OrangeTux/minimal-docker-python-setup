@@ -7,8 +7,8 @@ RUN pip install --no-index --find-links wheelhouse \
     flask \
     uwsgi
 
-COPY app /app
-COPY conf/uwsgi.ini /etc/uwsgi.ini
+COPY src /app
+COPY uwsgi.ini /etc/uwsgi.ini
 COPY shared_libs/* /lib/
 
 CMD uwsgi --ini /etc/uwsgi.ini
