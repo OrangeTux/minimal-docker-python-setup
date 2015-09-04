@@ -4,7 +4,7 @@ app:
         - "5000"
 
 nginx:
-    image: orangetux/nginx
+    build: nginx
     ports:
         - "1337:80"
     links:
