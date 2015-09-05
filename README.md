@@ -1,6 +1,6 @@
 # Minimal Docker Python setup
 A demo of a minimal Nginx-uWSGI-Flask-Redis stack using Docker. The app 
-store counts amount of visits per IP and stores it in Redis before returning
+counts amount of visits per IP and stores it in Redis before returning
 it to the client.
 
 Setup consists of 3 containers:
