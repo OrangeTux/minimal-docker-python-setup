@@ -31,8 +31,9 @@ And head over `http://localhost:1337` and you should see an IP address.
 ## uWSGI and Flask
 uWSGI and the Flask app are running from a custom image based on
 [advancedclimatesystems/python:2.7.10][python_image]. The Dockerfile for this
-image can be found [here][dockerfile_app]. See [Installing C extensions](##
-installing c extensions) for more information about how `uWSGI` is installed.
+image can be found [here][dockerfile_app]. See 
+'Installing C extensions' for more information about how 
+`uWSGI` is installed.
 
 ## Nginx
 Nginx runs from an image which is based on a small filesystem. This filesystem
