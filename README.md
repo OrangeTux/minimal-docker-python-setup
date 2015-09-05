@@ -1,5 +1,15 @@
 # Minimal Docker Python setup
-A demo of a minimal Nginx-uWSGI-Flask stack using Docker. 
+A demo of a minimal Nginx-uWSGI-Flask-Redis stack using Docker. The app 
+store counts amount of visits per IP and stores it in Redis before returning
+it to the client.
+
+Setup consists of 3 containers:
+
+* Nginx
+* uWSGI, Flask app 
+* Redis
+
+The whole setup runs with using less then 45 mb of disk space!
 
 ![Image showing size of both containers.][docker_images]
 
@@ -29,6 +39,11 @@ Nginx runs from an image which is based on a small filesystem. This filesystem
 is build with [Buildroot][buildroot]. You can build the filesystem using the
 supplied [defconfig][docker_nginx_defconfig].
 
+## Redis
+Like Nginx, Redis runs from an very small, custom crafted Docker image. To
+build the filesystem which this image is based on, use
+[docker_redis_defconfig][docker_redis_defconfig].
+
 ## Installing C extensions
 
 ### Wheel
@@ -47,12 +62,12 @@ Python. All required wheels are supplied and can be found at
 the following command. It requires pip, wheel and setuptools >= 0.8.0.
 
 ```shell
-user@host $ pip wheel --wheel-dir wheelhouse flask uwsgi
+user@host $ pip wheel --wheel-dir=wheelhouse flask flask-redis uwsgi 
 ```
 Installing depedencies from wheels is now simple:
 
 ```shell
-root@container # pip install --find-links wheelhouse flask uwsgi
+root@container # pip install --find-links wheelhouse flask flask-redis uwsgi
 ```
 
 ### Shared libraries
@@ -93,6 +108,7 @@ This software is licensed under the [MIT license][license].
 [dockerfile_app]: https://github.com/OrangeTux/minimal-docker-python-setup/blob/master/app/Dockerfile
 [docker_images]: docker_images.png "Size of images."
 [docker_nginx_defconfig]: nginx/docker_nginx_defconfig
+[docker_redis_defconfig]: redis/docker_redis_defconfig
 [license]: LICENSE
 [python_image]: https://hub.docker.com/r/advancedclimatesystems/python/
 [shared_libs]: app/shared_libs

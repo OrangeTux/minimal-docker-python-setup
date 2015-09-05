@@ -5,6 +5,7 @@ COPY wheelhouse /wheelhouse
 
 RUN pip install --find-links wheelhouse \
     flask \
+    flask-redis \
     uwsgi
 
 COPY src /app

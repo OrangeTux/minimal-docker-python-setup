@@ -1,7 +1,9 @@
 app:
     build: app
-    expose:
-        - "5000"
+    volumes:
+        - ./app/src:/app
+    links:
+        - redis
 
 nginx:
     build: nginx
@@ -10,3 +12,5 @@ nginx:
     links:
         - app
 
+redis:
+    build: redis
