@@ -1,7 +1,5 @@
 app:
     build: app
-    volumes:
-        - ./app/src:/app
     links:
         - redis
 
