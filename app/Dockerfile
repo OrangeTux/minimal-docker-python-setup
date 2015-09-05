@@ -3,7 +3,7 @@ MAINTAINER Auke Willem Oosterhoff <auke@orangetux.nl>
 
 COPY wheelhouse /wheelhouse
 
-RUN pip install --no-index --find-links wheelhouse \
+RUN pip install --find-links wheelhouse \
     flask \
     uwsgi
 
