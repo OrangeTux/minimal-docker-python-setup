@@ -102,6 +102,9 @@ libxml2.so.2 => /usr/lib/x86_64-linux-gnu/libxml2.so.2 (0x00007f2ad81d7000)
 liblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007f2ad72ed000)
 ```
 
+## Demo
+[![asciicast](https://asciinema.org/a/26061.png)](https://asciinema.org/a/26061)
+
 ## License
 This software is licensed under the [MIT license][license].
 
