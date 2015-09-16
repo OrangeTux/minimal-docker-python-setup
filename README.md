@@ -39,7 +39,7 @@ image can be found [here][dockerfile_app]. See
 
 ## Nginx
 Nginx runs from an image which is based on a small filesystem. This filesystem
-is build with [Buildroot][buildroot]. You can build the filesystem using the
+is built with [Buildroot][buildroot]. You can build the filesystem using the
 supplied [defconfig][docker_nginx_defconfig].
 
 ## Redis
@@ -51,15 +51,15 @@ build the filesystem which this image is based on, use
 
 ### Wheel
 Installation of Python dependencies is done in 2 steps. First the dependency is
-build. Compiling a C extension is one of the steps during this stage. After
-building the depedency is installed. This step isn't do much more than copying
+built. Compiling a C extension is one of the steps during this stage. After
+building the depedency is installed. This step does't do much more than copying
 files produced by the build phase to their correct location.
 
 The Python image doesn't contain a C compiler. For pure Python dependencies
-this is not a problem, but C extensions can't be build inside the image. These
-depencies must be build on the host before they can be installed inside image.
+this is not a problem, but C extensions can't be built inside the image. These
+dependencies must be built on the host before they can be installed inside the image.
 
-Dependencies can be build using [Wheel][wheel]: a built-package format for
+Dependencies can be built using [Wheel][wheel]: a built-package format for
 Python. All required wheels are supplied and can be found at
 [app/wheelhouse][wheelhouse], but if you want to build the wheels yourself run
 the following command. It requires pip, wheel and setuptools >= 0.8.0.
