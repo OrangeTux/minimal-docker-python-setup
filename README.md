@@ -1,12 +1,14 @@
+# This project is only for demontration purposes and will not be updated.
+
 # Minimal Docker Python setup
-A demo of a minimal Nginx-uWSGI-Flask-Redis stack using Docker. The app 
+A demo of a minimal Nginx-uWSGI-Flask-Redis stack using Docker. The app
 counts amount of visits per IP and stores it in Redis before returning
 it to the client.
 
 Setup consists of 3 containers:
 
 * Nginx
-* uWSGI, Flask app 
+* uWSGI, Flask app
 * Redis
 
 The whole setup runs with using less then 45 mb of disk space!
@@ -15,7 +17,7 @@ The whole setup runs with using less then 45 mb of disk space!
 
 ## Quickstart
 Create images with Nginx and Redis from the tarred filesystem:
-	
+
 ```shell
 user@host $ docker import - orangetux/nginx < nginx/rootfs.tar
 user@host $ docker import - orangetux/redis < redis/rootfs.tar
@@ -33,8 +35,8 @@ And head over `http://localhost:1337` and you should see an IP address.
 ## uWSGI and Flask
 uWSGI and the Flask app are running from a custom image based on
 [advancedclimatesystems/python:2.7.10][python_image]. The Dockerfile for this
-image can be found [here][dockerfile_app]. See 
-'Installing C extensions' for more information about how 
+image can be found [here][dockerfile_app]. See
+'Installing C extensions' for more information about how
 `uWSGI` is installed.
 
 ## Nginx
@@ -65,7 +67,7 @@ Python. All required wheels are supplied and can be found at
 the following command. It requires pip, wheel and setuptools >= 0.8.0.
 
 ```shell
-user@host $ pip wheel --wheel-dir=wheelhouse flask flask-redis uwsgi 
+user@host $ pip wheel --wheel-dir=wheelhouse flask flask-redis uwsgi
 ```
 Installing depedencies from wheels is now simple:
 
@@ -87,8 +89,8 @@ If you add this library to the Docker image and run `uwsgi` you'll find out
 that another depedency is missing. The following shared libraries must be added
 before `uWSGI` is able to run:
 
-* liblzma.so.5  
-* libpcre.so.3  
+* liblzma.so.5
+* libpcre.so.3
 * libxml2.so.2
 
 These libraries are included in the repository and located at
